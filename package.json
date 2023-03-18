@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/iAntonova/Basico-cy#readme",
   "devDependencies": {
-    "cypress": "^12.7.0"
+    "@cypress/xpath": "^2.0.3",
+    "cypress": "^12.8.1"
   }
 }
