@@ -16,7 +16,7 @@ describe("Test Contact Us form via Automation Test Store", () => {
         cy.get('#ContactUsFrm_email').type("joe_blogs112@gmail.com")
         cy.get('#ContactUsFrm_email').should('have.attr', 'name', 'email')
         cy.get('#ContactUsFrm_enquiry').type("Lorem ipsom ... ")
-        cy.get('button[title="Submit"]').click()
+        cyb8.get('button[title="Submit"]').click()
         // cy.get('.col-md-6 > .btn').click()
 
         cy.get('.mb40 > :nth-child(3)')
