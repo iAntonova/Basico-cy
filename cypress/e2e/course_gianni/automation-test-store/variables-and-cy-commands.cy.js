@@ -2,7 +2,7 @@
 
 describe("Verifying variables, cypress commands and jquery commands", () => {
 
-    it.skip("Navigating to specific product pages", () => {
+    it("Navigating to specific product pages", () => {
         cy.visit('https://www.automationteststore.com/')
         /*    //The following will fail
             const makeupLink = cy.get('a[href*="product/category&path="]').contains('Makeup')
@@ -36,7 +36,7 @@ describe("Verifying variables, cypress commands and jquery commands", () => {
         })
     })
 
-    it.only("Validate properties of the Contact Us page", () => {
+    it("Validate properties of the Contact Us page", () => {
         cy.visit('https://automationteststore.com/index.php?rt=content/contact')
         //Uses cypress commands and chaining
         cy.contains('#ContactUsFrm', 'Contact Us Form')
