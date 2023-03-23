@@ -45,7 +45,7 @@ describe("Handle js alerts", () => {
         cy.get('#popup-alerts')
             .invoke('removeAttr', 'target')
             .click({ force: true })
-
+/* https://docs.cypress.io/api/commands/stub#Syntax */
         const stub = cy.stub()
         cy.on('window:confirm', stub)
         cy.get('#button4').click().then(() => {
