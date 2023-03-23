@@ -67,12 +67,19 @@ describe("Alias and invoke", () => {
 
         cy.get('@saleItemPrice')
             .then($linkText => {
+                var saleItemsPriceTotal = 0
                 var saleItemPrice = $linkText.split('$')
                 var i
                 for (i = 0; i < saleItemPrice.length; i++) {
                     cy.log(saleItemPrice[i])
-                    //saleItemPriceTotal += Number(saleItemPrice[i])
+                    saleItemsPriceTotal += Number(saleItemPrice[i])
                 }
+                itemsTotal += saleItemsPriceTotal
+                cy.log("Sale price items total: " + saleItemsPriceTotal)
+            })
+            .then(() => {
+                cy.log("The total price of all products: " + itemsTotal)
+                expect(itemsTotal).to.equal(639.49)
             })
     })
 })
