@@ -12,15 +12,15 @@ describe("Verify Autocomplete dropdown lists via webdriveruni", () => {
 
         cy.get('#myInputautocomplete-list > *').each(($el, index, $list) => {
             const prod = $el.text()
-            const productToSelect = 'Avocado'
+            const productToSelect = 'Avacado'
 
             if (prod === productToSelect) {
-                //$el.click()
-                $el.trigger("click", { force:true })
-                //$el.scrollIntoView().click({ force:true })
+                //$el.click() - deprecated
+                $el.trigger("click")
+                
 
                 cy.get('#submit-button').click()
-                cy.url().should('include', 'Avocado')
+                cy.url().should('include', productToSelect)
             }
         }).then(() => {
             cy.get('#myInput').type('g')
@@ -29,10 +29,11 @@ describe("Verify Autocomplete dropdown lists via webdriveruni", () => {
                 const productToSelect = 'Grapes'
     
                 if (prod === productToSelect) {
-                    //$el.click()
+                    //$el.click() - deprecated
+                    $el.trigger("click");
     
                     cy.get('#submit-button').click()
-                    cy.url().should('include', 'Avocado')
+                    cy.url().should('include', productToSelect)
                 }
             })
         })
