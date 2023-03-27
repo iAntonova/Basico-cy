@@ -1,4 +1,12 @@
+import HomePage_PO from "../../../support/pageObject/webdriver-uni/Homepage_PO"
+import ContactUs_PO from "../../../support/pageObject/webdriver-uni/Contact_Us_PO"
+
 /// <reference types="Cypress"/>
+
+const homepage_PO = new HomePage_PO()
+const contact_Us_PO = new ContactUs_PO()
+
+
 /* https://docs.cypress.io/api/commands/fixture#Syntax */
 describe("Test Contact Us form via WebdriverUni", () => {
 
@@ -11,8 +19,8 @@ describe("Test Contact Us form via WebdriverUni", () => {
 
     beforeEach(() => {
         // cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html')
-       // cy.visit("/" + "Contact-Us/contactus.html")
-        cy.visit(Cypress.env("webdriveruni_homepage") + "/Contact-Us/contactus.html")
+        // cy.visit("/" + "Contact-Us/contactus.html")
+        //  cy.visit(Cypress.env("webdriveruni_homepage") + "/Contact-Us/contactus.html") ===>>>
 
         /* jQuery removeAttr() Method
          https://www.w3schools.com/jquery/html_removeattr.asp */
@@ -20,6 +28,9 @@ describe("Test Contact Us form via WebdriverUni", () => {
         // cy.get('#contact-us')
         //     .invoke('removeAttr', 'target')
         //     .click({ force: true })
+
+        homepage_PO.visitHomePage()
+        homepage_PO.clickOn_ContactUs_Button()
     })
 
     it("Should be able to submit a successful submission via contact us form", () => {
@@ -40,8 +51,9 @@ describe("Test Contact Us form via WebdriverUni", () => {
 
         // cy.webdriveruni_ContactForm_Submission(data.first_name, data.last_name, data.email, 'Lorem ipsom ... ', 'h1', 'Thank You for your Message!')
         // Use GLOBAL variables
-        cy.webdriveruni_ContactForm_Submission(Cypress.env("first_name"), data.last_name, data.email, 'Lorem ipsom ... ', 'h1', 'Thank You for your Message!')
-
+        /* cy.webdriveruni_ContactForm_Submission(Cypress.env("first_name"), data.last_name, data.email, 'Lorem ipsom ... ', 'h1', 'Thank You for your Message!')
+===>>> */
+        contact_Us_PO.contactForm_Submission(Cypress.env("first_name"), data.last_name, data.email, 'Lorem ipsom ... ', 'h1', 'Thank You for your Message!')
     })
 
     it("Should not be able to submit a successful submission via contact us form as all fields are required", () => {
@@ -50,7 +62,10 @@ describe("Test Contact Us form via WebdriverUni", () => {
         // cy.get('textarea.feedback-input').type('Lorem ipsom ... ')
         // cy.get('[type="submit"]').click()
         // cy.get('body').contains('Error: all fields are required')
-        cy.webdriveruni_ContactForm_Submission(data.first_name, data.last_name, " ",
+        /* cy.webdriveruni_ContactForm_Submission(data.first_name, data.last_name, " ",
+            'Lorem ipsom ... ', 'body', 'Error: Invalid email address')  ===>>> */
+
+        contact_Us_PO.contactForm_Submission(data.first_name, data.last_name, " ",
             'Lorem ipsom ... ', 'body', 'Error: Invalid email address')
     })
 })
