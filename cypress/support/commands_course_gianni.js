@@ -28,6 +28,16 @@ Cypress.Commands.add('selectProduct', productName => {
         })
 })
 
+Cypress.Commands.add('addProductToBsaket', productName => {
+    cy.get('.fixed_wrapper .prdocutname')
+        .each(($el, index, $list) => {
+            if ($el.text() === productName) {
+                cy.log($el.text())
+                cy.get('.productcart').eq(index).click()
+            }
+        })
+})
+
 Cypress.Commands.add('webdriveruni_ContactForm_Submission',
     (firstName, lastName, email, comment, $selector, textToLocate) => {
         cy.get('[name="first_name"]').type(firstName)
