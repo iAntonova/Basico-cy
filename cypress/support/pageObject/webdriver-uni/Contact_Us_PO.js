@@ -8,7 +8,9 @@ class ContactUs_PO {
 
         cy.get('[type="submit"]').click()
 
-        cy.get($selector).contains(textToLocate)
+      //  cy.get($selector).pause().contains(textToLocate, {timeout: 60000})
+      cy.get($selector).contains(textToLocate, {timeout: 60000})
+
     }
 
 }

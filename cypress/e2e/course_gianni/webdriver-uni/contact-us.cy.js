@@ -32,7 +32,9 @@ describe("Test Contact Us form via WebdriverUni", () => {
         //     .click({ force: true })
 
         homepage_PO.visitHomePage()
+        // cy.wait(3000)
         homepage_PO.clickOn_ContactUs_Button()
+        //cy.pause()
     })
 
     it("Should be able to submit a successful submission via contact us form", () => {
