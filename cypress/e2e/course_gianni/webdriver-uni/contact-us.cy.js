@@ -3,12 +3,14 @@ import ContactUs_PO from "../../../support/pageObject/webdriver-uni/Contact_Us_P
 
 /// <reference types="Cypress"/>
 
-const homepage_PO = new HomePage_PO()
-const contact_Us_PO = new ContactUs_PO()
-
 
 /* https://docs.cypress.io/api/commands/fixture#Syntax */
 describe("Test Contact Us form via WebdriverUni", () => {
+
+    Cypress.config('defaultCommandTimeout', 20000)
+
+    const homepage_PO = new HomePage_PO()
+    const contact_Us_PO = new ContactUs_PO()
 
     before(function () {
         cy.fixture('example').then(function (data) {
