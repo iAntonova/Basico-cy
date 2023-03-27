@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 describe("Test Datepicker via webdriveruni", () => {
     beforeEach(() => {
-        cy.visit("http://webdriveruniversity.com/");
+        cy.visit("/");
         cy.get("#datepicker").invoke("removeAttr", "target").click({ force: true });
     })
 
