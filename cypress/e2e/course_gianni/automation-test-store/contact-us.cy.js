@@ -3,6 +3,7 @@
 describe("Test Contact Us form via Automation Test Store", () => {
 
     before(() => {
+        cy.viewport(550, 750)
         cy.fixture('userDetails').as('user')
     })
 

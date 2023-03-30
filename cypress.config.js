@@ -15,6 +15,8 @@ module.exports = defineConfig({
     screenshotOnRunFailure: true,
     trashAssetsBeforeRuns: true,
     video: false,
+    viewportHeight: 1080,
+    viewportWidth: 1920,
     env:{
       first_name: "Sarah",
       webdriveruni_homepage: "http://www.webdriveruniversity.com"
