@@ -10,7 +10,7 @@ npx cypress run --headed --browser chrome --spec cypress/e2e/course_gianni/webdr
 
 npx cypress run --headed --browser chrome --spec cypress/e2e/course_gianni/webdriver-uni/contact-us.cy.js --env first_name=Tim  --env webdriveruni_homepage=https://www.automationteststore.com/
 
-npx cypress run --record --key 386c0780-4bbe-4bad-a2b3-18fa3b8d511d
+npx cypress run --record --key 
 
 npx cypress run --spec cypress/e2e/course_gianni/automation-test-store/contact-us.cy.js --record --key 386c0780-4bbe-4bad-a2b3-18fa3b8d511d
 
@@ -18,3 +18,9 @@ npx cypress run --spec cypress/e2e/course_gianni/automation-test-store/contact-u
 npx cypress run --browser chrome --headed
 
 npm run triggerAllTests-headless
+
+# 55: Reporters
+https://docs.cypress.io/guides/tooling/reporters#Multiple-reporters
+npm install --save-dev cypress-multi-reporters mocha-junit-reporter
+
+
