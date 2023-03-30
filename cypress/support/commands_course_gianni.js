@@ -41,7 +41,7 @@ Cypress.Commands.add('addProductToBsaket', productName => {
     cy.get('.fixed_wrapper .prdocutname')
         .each(($el, index, $list) => {
             if ($el.text() === productName) {
-                cy.log($el.text())
+                cy.log($el.text() + " with # " + index)
                 cy.get('.productcart').eq(index).click()
             }
         })

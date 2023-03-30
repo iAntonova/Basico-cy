@@ -21,10 +21,10 @@ describe("Add multiple items to basket", () => {
     })
     
     it("Add specific multiple items to basket", () => {
-      /*   globalThis.data.productName.forEach(function (element) {
+         globalThis.data.productName.forEach(function (element) {
             cy.addProductToBsaket(element)
         })
-        cy.get('.dropdown-toggle > .fa').click() */
-        autoStore_HairCare_PO.addHairCareProductsToBusket()
+        cy.get('.dropdown-toggle > .fa').click() 
+      //  autoStore_HairCare_PO.addHairCareProductsToBusket()
     })
 })

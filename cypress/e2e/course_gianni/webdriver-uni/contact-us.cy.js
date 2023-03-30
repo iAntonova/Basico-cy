@@ -57,7 +57,8 @@ describe("Test Contact Us form via WebdriverUni", () => {
         // Use GLOBAL variables
         /* cy.webdriveruni_ContactForm_Submission(Cypress.env("first_name"), data.last_name, data.email, 'Lorem ipsom ... ', 'h1', 'Thank You for your Message!')
 ===>>> */
-        contact_Us_PO.contactForm_Submission(Cypress.env("first_name"), data.last_name, data.email, 'Lorem ipsom ... ', 'h1', 'Thank You for your Message!')
+        contact_Us_PO.contactForm_Submission(Cypress.env("first_name"),
+            data.last_name, data.email, 'Lorem ipsom ... ', 'h1', 'Thank You for your Message!')
     })
 
     it("Should not be able to submit a successful submission via contact us form as all fields are required", () => {
