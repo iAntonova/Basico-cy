@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'rm1kkv',
   e2e: {
     //baseUrl: 'https://test.raiser.work/#',
     setupNodeEvents(on, config) {
@@ -15,6 +16,7 @@ module.exports = defineConfig({
     screenshotOnRunFailure: true,
     trashAssetsBeforeRuns: true,
     video: false,
+    videoUploadOnPasses: false,
     viewportHeight: 1080,
     viewportWidth: 1920,
     env:{
