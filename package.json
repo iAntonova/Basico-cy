@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "triggerAllTests-headless": "npx cypress run",
+    "triggerAllTests-headed": "npx cypress run --headed",
+    "triggerAllTests-chrome": "npx cypress run --browser chrome",
+    "triggerAllTests-dashboard": "npx cypress run --record --key 386c0780-4bbe-4bad-a2b3-18fa3b8d511d",
+    "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/e2e/course_gianni/webdriver-uni/*"
   },
   "repository": {
     "type": "git",

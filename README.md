@@ -17,3 +17,4 @@ npx cypress run --spec cypress/e2e/course_gianni/automation-test-store/contact-u
 
 npx cypress run --browser chrome --headed
 
+npm run triggerAllTests-headless
