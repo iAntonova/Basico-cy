@@ -1,3 +1,6 @@
+/* https://docs.cypress.io/api/commands/clearcookies#Syntax
+https://docs.cypress.io/api/commands/clearlocalstorage#Syntax */
+
 import AutoStore_HomePage_PO from "../../../support/pageObject/automation-test-store/AutoStore_Homepage_PO"
 import AutoStore_HairCare_PO from "../../../support/pageObject/automation-test-store/AutoStore_HairCare_PO"
 
@@ -16,6 +19,8 @@ describe("Add multiple items to basket", () => {
     beforeEach(() => {
       /*   cy.visit('https://www.automationteststore.com/')
         cy.get('a[href*="product/category&path="]').contains('Hair Care').click() ===>>> */ 
+        cy.clearLocalStorage()
+        cy.clearCookies()
         autoStore_Homepage_PO.accessHomePage()
         autoStore_Homepage_PO.clickOn_HairCare_Link()
     })
