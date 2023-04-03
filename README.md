@@ -19,8 +19,20 @@ npx cypress run --browser chrome --headed
 
 npm run triggerAllTests-headless
 
-# 55: Reporters
+# 56: Reporters
 https://docs.cypress.io/guides/tooling/reporters#Multiple-reporters
 npm install --save-dev cypress-multi-reporters mocha-junit-reporter
+result: npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml
+reporter-congig.json
+{
+    "reporterEnabled": "spec, mocha-junit-reporter",
+    "mochaJunitReporterReporterOptions": {
+        "mochaFile": "cypress/results/junit/results-[hash].xml"
+    }
+}
 
-
+mochawesome-report-generator:
+https://www.npmjs.com/package/mochawesome-report-generator
+https://docs.cypress.io/guides/tooling/reporters#Multiple-reporters
+> npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
+reporter-congig.json

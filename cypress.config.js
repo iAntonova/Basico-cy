@@ -11,7 +11,7 @@ module.exports = defineConfig({
     excludeSpecPattern: 'cypress/e2e/course_gianni/other/*.js',
     baseUrl: "http://www.webdriveruniversity.com",
     chromeWebSecurity: false,
-    defaultCommandTimeout:10000,
+    defaultCommandTimeout: 10000,
     pageLoadTimeout: 120000,
     screenshotOnRunFailure: true,
     trashAssetsBeforeRuns: true,
@@ -19,10 +19,14 @@ module.exports = defineConfig({
     videoUploadOnPasses: false,
     viewportHeight: 1080,
     viewportWidth: 1920,
-    env:{
+    reporter: 'cypress-multi-reporters',
+    reporterOptions: {
+      configFile: 'reporter-config.json',
+    },
+    env: {
       first_name: "Sarah",
       webdriveruni_homepage: "http://www.webdriveruniversity.com"
     }
   },
-  
+
 });
