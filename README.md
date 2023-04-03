@@ -36,3 +36,21 @@ https://www.npmjs.com/package/mochawesome-report-generator
 https://docs.cypress.io/guides/tooling/reporters#Multiple-reporters
 > npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
 reporter-congig.json
+{
+    "reporterEnabled": "spec, cypress-multi-reporters",
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "cypress/results/junit/results-[hash].xml"
+    },
+    "reporterOptions": {
+      "reporterEnabled": "mochawesome",
+      "mochawesomeReporterOptions": {
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      }
+    }
+  }
+
+  > npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json
