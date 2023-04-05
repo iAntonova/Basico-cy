@@ -61,3 +61,8 @@ https://docs.cypress.io/api/plugins/configuration-api#Switch-between-multiple-co
   >npx cypress open --env configFile=staging
 
 > npx cypress run --spec cypress/e2e/course_gianni/webdriver-uni/checkboxes.cy.js --env configFile=staging --headed
+
+https://docs.cypress.io/guides/guides/test-retries
+
+git:
+> git remote -v

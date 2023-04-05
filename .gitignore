@@ -6,3 +6,4 @@ cypress/videos/
 node_modules/
 mochawesome-report/
 results/
+package-lock.json
