@@ -1,4 +1,17 @@
 const { defineConfig } = require("cypress");
+const fs = require('fs-extra');
+const path = require('path');
+
+function getConfigurationByFile(file) {
+  const pathToConfigFile = path.resolve('cypress//config', `${file}.json`);
+
+  if (!fs.existsSync(pathToConfigFile)) {
+    console.log("No custom config file found.");
+    return {};
+  }
+
+  return fs.readJson(pathToConfigFile)
+}
 
 module.exports = defineConfig({
   projectId: 'rm1kkv',
@@ -6,6 +19,9 @@ module.exports = defineConfig({
     //baseUrl: 'https://test.raiser.work/#',
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      const file = config.env.configFile || ''
+
+      return getConfigurationByFile(file)
     },
     specPattern: 'cypress/e2e/course_gianni/**/*.{js,jsx,ts,tsx,feature}',
     excludeSpecPattern: 'cypress/e2e/course_gianni/other/*.js',

@@ -54,3 +54,10 @@ reporter-congig.json
   }
 
   > npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json
+
+https://docs.cypress.io/guides/tooling/reporters#Multiple-reporters
+
+https://docs.cypress.io/api/plugins/configuration-api#Switch-between-multiple-configuration-files
+  >npx cypress open --env configFile=staging
+
+> npx cypress run --spec cypress/e2e/course_gianni/webdriver-uni/checkboxes.cy.js --env configFile=staging --headed
