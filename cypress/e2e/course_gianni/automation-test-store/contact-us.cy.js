@@ -7,10 +7,18 @@ describe("Test Contact Us form via Automation Test Store", () => {
         cy.fixture('userDetails').as('user')
     })
 
-    it("Should be able to submit a successful submission via contact us form", () => {
+    it("Should be able to submit a successful submission via contact us form"
+    // , 
+    // {
+    //     retries: {
+    //         runMode: 2,
+    //         openMode: 2
+    //     }
+    // }
+    , () => {
         cy.visit('https://www.automationteststore.com/')
         // 
-        cy.get('a[href$="contact"]')
+        cy.get('a[href$="contact"]666')
             .click()
             .then(function (linkText) {
                 cy.log("Clicked on link using text: " + linkText.text())
