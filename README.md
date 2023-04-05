@@ -66,3 +66,9 @@ https://docs.cypress.io/guides/guides/test-retries
 
 git:
 > git remote -v
+
+Running Specific Tests by Browser
+https://docs.cypress.io/guides/guides/cross-browser-testing#Running-Specific-Tests-by-Browser
+
+Cypress.isBrowser
+https://docs.cypress.io/api/cypress-api/isbrowser#Arguments
